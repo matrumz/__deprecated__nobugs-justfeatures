@@ -1,0 +1,56 @@
+upstream nodejs {
+    server 127.0.0.1:3000;
+}
+
+server {
+    listen 443 ssl;
+    server_name nobugs-justfeatures.com;
+
+    ssl on;
+
+    ssl_certificate /etc/letsencrypt/live/nobugs-justfeatures.com/cert.pem;
+    ssl_certificate_key /etc/letsencrypt/live/nobugs-justfeatures.com/privkey.pem;
+
+    ssl_stapling on;
+    ssl_stapling_verify on;
+    ssl_trusted_certificate /etc/letsencrypt/live/nobugs-justfeatures.com/fullchain.pem;
+
+    ssl_session_timeout 5m;
+
+    root /var/www/html/nobugs-justfeatures;
+
+    index index.html;
+
+    location /service {
+        rewrite ^/service(.*)$ $1 break;
+        try_files $uri $uri/ @nodejs;
+    }
+
+    location / {
+        # First attempt to serve request as file, then
+        # as directory, then fall back to displaying a 404.
+        try_files $uri $uri/ =404;
+    }
+
+    location @nodejs {
+        proxy_pass http://nodejs;
+    }
+}
+
+server {
+    listen 80;
+    server_name nobugs-justfeatures.com;
+    return 301 https://nobugs-justfeatures.com$request_uri;
+}
+
+#server {
+#    listen 80;
+#    server_name www.nobugs-justfeatures.com;
+#    rewrite ^/(.*) https://nobugs-justfeatures.com/$1 permanent;
+#}
+
+#server {
+#    listen 443;
+#    server_name www.nobugs-justfeatures.com;
+#    rewrite ^/(.*)$ https://nobugs-justfeatures.com/$1 permanent;
+#}

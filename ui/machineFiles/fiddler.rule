@@ -1,0 +1,16 @@
+//OnBeforeRequest
+//HTTPS requires fiddler certs to be trusted
+		if (oSession.HostnameIs("nobugs-justfeatures.com")) {
+			// Handle CONNECT Tunnels
+			if (oSession.HTTPMethodIs("CONNECT"))
+			{
+				oSession["x-replywithtunnel"] = "FakeTunnel";
+				return;
+			}
+
+			// Handle HTTPS requests
+			if (oSession.isHTTPS)
+			{
+				oSession.fullUrl = "http://" + "localhost" + oSession.PathAndQuery;
+			}
+		}
