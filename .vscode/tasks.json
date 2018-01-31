@@ -1,0 +1,33 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "server build",
+            "identifier": "serverBuild",
+            "isBackground": false,
+            "group": "build",
+            "type": "shell",
+            "command": "npm run build",
+            "options": {
+                "cwd": "${workspaceFolder}/server"
+            },
+            "problemMatcher": [
+                "$tsc"
+            ]
+        },
+        {
+            "label": "ui root app build",
+            "identifier": "rootBuild",
+            "isBackground": false,
+            "group": "build",
+            "type": "shell",
+            "command": "sudo npm run build",
+            "options": {
+                "cwd": "${workspaceFolder}/ui/root"
+            },
+            "problemMatcher": []
+        }
+    ]
+}
