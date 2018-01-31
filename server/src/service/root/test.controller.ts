@@ -1,9 +1,11 @@
 import * as miscModels from "../common/misc.models";
+import { middlewareTest } from "../../middleware/test";
 
-export = class Test {
-    constructor (router: miscModels.Router)
+export = class Test
+{
+    constructor(router: miscModels.Router)
     {
-        router.get("/", this.testRoot.bind(this));
+        router.get("/", middlewareTest, this.testRoot.bind(this));
     }
 
     private testRoot(req: miscModels.Request, res: miscModels.Response): void
