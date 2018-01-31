@@ -1,7 +1,7 @@
 {
-  "name": "nobugs-justfeatures-ui",
+  "name": "nobugs-justfeatures-ui-root",
   "version": "0.0.1",
-  "description": "Angular4 UI for nobugs-justfeatures.com",
+  "description": "Angular4 UI for nobugs-justfeatures.com (root sub-domain)",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --config webpack/webpack.dev.config.js && cp ./nginx/nobugs-justfeatures.dev /etc/nginx/sites-enabled/"
