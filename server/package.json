@@ -4,7 +4,8 @@
   "description": "NodeJS server stack for nobugs-justfeatures.com. Service layer hosted by AutoMagical-WebServer.",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc -p ."
+    "build": "tsc -p .",
+    "startDevServer": "sudo service nginx restart && amwebs"
   },
   "repository": {
     "type": "git",
@@ -22,7 +23,13 @@
   },
   "homepage": "https://github.com/matrumz/nobugs-justfeatures#readme",
   "devDependencies": {
+    "@types/bcryptjs": "^2.4.1",
     "@types/express": "^4.11.0",
+    "@types/jsonwebtoken": "^7.2.5",
     "express": "^4.16.2"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^8.1.1"
   }
 }
