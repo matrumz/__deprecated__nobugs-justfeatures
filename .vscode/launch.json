@@ -11,7 +11,7 @@
             "useWSL": true,
             "runtimeExecutable": "node",
             "args": [
-                "/usr/lib/node_modules/automagical-webserver/dist/server.js"
+                "/home/matrumz/.nvm/versions/node/v8.9.4/lib/node_modules/automagical-webserver/dist/server.js"
             ],
             "outFiles": [
                 "${workspaceFolder}/server/dist/**/*.js"
