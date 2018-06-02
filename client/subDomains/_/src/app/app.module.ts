@@ -1,16 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { UIRouterModule } from '@uirouter/angular';
 
-import { States } from "./uiRouter.module";
+import { States } from "./uiRouter.states";
 
 import { AppComponent } from './app.component';
-import { Page1Component } from './test/page1/page1.component';
-import { UIRouterModule } from '@uirouter/angular';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    Page1Component
+    AppComponent
   ],
   imports: [
     BrowserModule,
