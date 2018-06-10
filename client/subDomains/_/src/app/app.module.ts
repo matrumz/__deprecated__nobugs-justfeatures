@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { UIRouterModule } from '@uirouter/angular';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { States } from "./uiRouter.states";
 
@@ -20,7 +21,8 @@ import { OMenuComponent } from './samples/menus/radial/o-menu/o-menu.component';
   ],
   imports: [
     BrowserModule,
-    UIRouterModule.forRoot({states: States, useHash: false})
+    UIRouterModule.forRoot({states: States, useHash: false}),
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
