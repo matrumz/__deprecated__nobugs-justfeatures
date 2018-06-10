@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { UIRouterModule } from '@uirouter/angular';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { FanMenuModule } from "ng2-fan-menu";
 
 import { States } from "./uiRouter.states";
 
@@ -22,7 +23,8 @@ import { OMenuComponent } from './samples/menus/radial/o-menu/o-menu.component';
   imports: [
     BrowserModule,
     UIRouterModule.forRoot({states: States, useHash: false}),
-    FlexLayoutModule
+    FlexLayoutModule,
+    FanMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]
