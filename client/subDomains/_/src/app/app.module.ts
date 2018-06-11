@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { UIRouterModule } from '@uirouter/angular';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { FanMenuModule } from "ng2-fan-menu";
+import { FanMenuModule } from "node_modules/ng2-fan-menu/src/app/menu/menu.module";
 
 import { States } from "./uiRouter.states";
 

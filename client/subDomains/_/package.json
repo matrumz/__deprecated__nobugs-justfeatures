@@ -26,9 +26,10 @@
     "@uirouter/angular": "^2.0.0",
     "circular-menu": "^1.0.6",
     "core-js": "^2.5.4",
-    "ng2-fan-menu": "^1.0.1",
+    "ng2-fan-menu": "github:DanielYKPan/ng2-fan-menu#dev",
     "o-menu": "^1.1.1",
-    "rxjs": "^6.0.0",
+    "rxjs": "^6.2.0",
+    "rxjs-compat": "^6.2.0",
     "wheelnav": "^1.7.1",
     "zone.js": "^0.8.26"
   },
@@ -49,7 +50,6 @@
     "karma-jasmine": "~1.1.1",
     "karma-jasmine-html-reporter": "^0.2.2",
     "protractor": "~5.3.0",
-    "rxjs-compat": "^6.2.0",
     "ts-node": "~5.0.1",
     "tslint": "~5.9.1",
     "typescript": "~2.7.2"
