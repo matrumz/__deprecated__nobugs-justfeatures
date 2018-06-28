@@ -2,7 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { UIRouterModule } from '@uirouter/angular';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { FanMenuModule } from "node_modules/ng2-fan-menu/src/app/menu/menu.module";
+// import { FanMenuModule } from "node_modules/ng2-fan-menu/src/app/menu/menu.module";
+// import { FanMenuModule } from "../../dist/nobugs-justfeatures/vendor.js";
+import { FanMenuModule } from "../../../../../../ng2-fan-menu/dist/index"
 
 import { States } from "./uiRouter.states";
 
@@ -22,9 +24,9 @@ import { OMenuComponent } from './samples/menus/radial/o-menu/o-menu.component';
   ],
   imports: [
     BrowserModule,
-    UIRouterModule.forRoot({states: States, useHash: false}),
-    FlexLayoutModule,
-    FanMenuModule
+    UIRouterModule.forRoot({ states: States, useHash: false }),
+    FlexLayoutModule//,
+    // FanMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -26,7 +26,6 @@
     "@uirouter/angular": "^2.0.0",
     "circular-menu": "^1.0.6",
     "core-js": "^2.5.4",
-    "ng2-fan-menu": "github:DanielYKPan/ng2-fan-menu#dev",
     "o-menu": "^1.1.1",
     "rxjs": "^6.2.0",
     "rxjs-compat": "^6.2.0",
