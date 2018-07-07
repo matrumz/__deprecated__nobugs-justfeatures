@@ -1,0 +1,24 @@
+server {
+    listen 80;
+    server_name www.localhost;
+
+    root /var/www/html/nobugs-justfeatures/www;
+    index index.html;
+
+    location /services {
+        rewrite ^/services(.*)$ $1 break;
+        try_files $uri $uri/ @nodejs;
+    }
+
+    location / {
+        # First attempt to serve request as file, then
+        # as directory, then fall back to displaying a 404.
+        #try_files $uri $uri/ =404;
+        # Changing 404 to back to index allows HTML5 patterns to work, specifically: ui-router
+        try_files $uri $uri/ /index.html;
+    }
+
+    location @nodejs {
+        proxy_pass http://nodejs;
+    }
+}
