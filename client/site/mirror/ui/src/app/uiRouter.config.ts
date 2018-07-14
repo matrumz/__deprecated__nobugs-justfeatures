@@ -5,7 +5,7 @@ import { StateNotFoundComponent } from "./state-not-found/state-not-found.compon
 
 export let uiRouterConfig: uirouter.RootModule = {
     useHash: false,
-    otherwise: "/404",
+    otherwise: "/",
     states: [
         {
             name: "app",
@@ -16,7 +16,7 @@ export let uiRouterConfig: uirouter.RootModule = {
         //#region Pane
         {
             name: "app.pane",
-            url: "pane",
+            url: "",
             component: PaneComponent
         },
         //#endregion
