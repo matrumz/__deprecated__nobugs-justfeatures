@@ -8,7 +8,9 @@
     "postbuild": "cp dist/mirror-nobugs-justfeatures/* /var/www/html/nobugs-justfeatures/mirror/",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "predeploy": "ssh claptrap 'rm -rf /var/www/html/nobugs-justfeatures/mirror/*'",
+    "deploy": "scp dist/mirror-nobugs-justfeatures/* claptrap:/var/www/html/nobugs-justfeatures/mirror/"
   },
   "private": true,
   "dependencies": {
