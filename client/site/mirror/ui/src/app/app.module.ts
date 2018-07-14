@@ -7,12 +7,14 @@ import { uiRouterConfig } from "./uiRouter.config";
 import { AppComponent } from './app.component';
 import { PaneComponent } from './pane/pane.component';
 import { StateNotFoundComponent } from './state-not-found/state-not-found.component';
+import { SimpleClockComponent } from './widgets/simple-clock/simple-clock.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PaneComponent,
-    StateNotFoundComponent
+    StateNotFoundComponent,
+    SimpleClockComponent
   ],
   imports: [
     BrowserModule,
