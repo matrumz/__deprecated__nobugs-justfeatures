@@ -1,0 +1,4 @@
+# /home/matrumz/.config/lxsession/LXDE-pi/autostart
+
+# Start chromium at boot, in kiosk mode (full screen, prevent dialogs)
+@chromium-browser --kiosk --app=https://mirror.nobugs-justfeatures.com

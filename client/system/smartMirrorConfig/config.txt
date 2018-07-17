@@ -1,0 +1,4 @@
+# /boot/config.txt
+
+# Rotate display 90deg
+display_rotate=1
