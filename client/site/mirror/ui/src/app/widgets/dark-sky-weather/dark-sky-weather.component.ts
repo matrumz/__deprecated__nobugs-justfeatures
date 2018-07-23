@@ -11,11 +11,18 @@ export class DarkSkyWeatherComponent implements OnInit
 
     constructor(
         @Inject(DOCUMENT) private document: Document
-    ) { }
+    )
+    {
+        this.tickInterval = 1000 * 60 * 60;
+    }
 
     ngOnInit()
     {
         this.darkSkyInit(this.document, 'script', 'weatherwidget-io-js');
+        setInterval(
+            () => { this.darkSkyInit(this.document, 'script', 'weatherwidget-io-js'); },
+            this.tickInterval
+        );
     }
 
     private darkSkyInit(d, s, id)
@@ -29,4 +36,6 @@ export class DarkSkyWeatherComponent implements OnInit
             fjs.parentNode.insertBefore(js, fjs);
         }
     }
+
+    private readonly tickInterval: number;
 }
