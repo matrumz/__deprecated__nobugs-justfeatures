@@ -21,6 +21,12 @@ server {
         try_files $uri $uri/ @nodejs;
     }
 
+    # Needed for certbot renew
+    location /.well-known {
+        root /var/www/html/nobugs-justfeatures/;
+        try_files $uri $uri/ =404;
+    }
+
     location / {
         # First attempt to serve request as file, then
         # as directory, then fall back to displaying a 404.

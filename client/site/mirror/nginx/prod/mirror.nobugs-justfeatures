@@ -16,6 +16,12 @@ server {
     root /var/www/html/nobugs-justfeatures/mirror;
     index index.html;
 
+    # Needed for certbot renew
+    location /.well-known {
+        root /var/www/html/nobugs-justfeatures/;
+        try_files $uri $uri/ =404;
+    }
+
     location / {
         try_files $uri $uri/ =404;
     }
