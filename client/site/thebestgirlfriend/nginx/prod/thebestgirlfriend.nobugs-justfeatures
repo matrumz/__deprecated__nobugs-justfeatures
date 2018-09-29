@@ -1,0 +1,12 @@
+server {
+    listen 80;
+
+    server_name thebestgirlfriend.nobugs-justfeatures.com;
+
+    root /var/www/html/nobugs-justfeatures/thebestgirlfriend;
+    index index.html;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+}
