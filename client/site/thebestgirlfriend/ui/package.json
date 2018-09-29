@@ -5,9 +5,12 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "postbuild": "cp -r dist/thebestgirlfriend-nobugs-justfeatures/* /var/www/html/nobugs-justfeatures/thebestgirlfriend/",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "predeploy": "ssh claptrap 'rm -rf /var/www/html/nobugs-justfeatures/thebestgirlfriend/*'",
+    "deploy": "scp -r dist/thebestgirlfriend-nobugs-justfeatures/* claptrap:/var/www/html/nobugs-justfeatures/thebestgirlfriend/"
   },
   "private": true,
   "dependencies": {
